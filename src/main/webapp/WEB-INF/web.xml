@@ -3,30 +3,30 @@
     <context-param>
         <description>Repository type</description>
         <param-name>repository.type</param-name>
-        <param-value>MYSQL</param-value>
+        <param-value>DB2</param-value>
     </context-param>
 
     <context-param>
         <description>Database Connection URL</description>
         <param-name>database.class</param-name>
-        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        <param-value>com.ibm.db2.jcc.DB2Driver</param-value>
     </context-param>
 
     <context-param>
         <description>Database Connection URL</description>
         <param-name>database.url</param-name>
-        <param-value>jdbc:mysql://mysql/contact?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;</param-value>
+        <param-value>jdbc:db2://192.168.15.3:50000/contact</param-value>
     </context-param>
 
     <context-param>
         <description>Database User</description>
         <param-name>database.user</param-name>
-        <param-value>root</param-value>
+        <param-value>db2user</param-value>
     </context-param>
 
     <context-param>
         <description>Database Password</description>
         <param-name>database.password</param-name>
-        <param-value>root</param-value>
+        <param-value>db2password</param-value>
     </context-param>
 </web-app>

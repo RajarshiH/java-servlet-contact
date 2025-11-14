@@ -1,6 +1,7 @@
 package com.yusufsezer.listener;
 
 import com.yusufsezer.contract.IRepository;
+import com.yusufsezer.repository.DB2Repository;
 import com.yusufsezer.repository.MySQLRepository;
 import com.yusufsezer.repository.ObjectRepository;
 import com.yusufsezer.repository.SQLiteRepository;
@@ -22,11 +23,11 @@ public class RepositoryListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         var servletContext = servletContextEvent.getServletContext();
-        String repositoryType = getParameter(servletContext, "repository.type", "mysql");
-        String databaseClass = getParameter(servletContext, "database.class", "com.mysql.cj.jdbc.Driver");
-        String databaseUrl = getParameter(servletContext, "database.url", "jdbc:mysql://localhost:3306/contact?useSSL=false&amp;serverTimezone=UTC&amp;");
-        String databaseUser = getParameter(servletContext, "database.user", "root");
-        String databasePassword = getParameter(servletContext, "database.password", "root");
+        String repositoryType = getParameter(servletContext, "repository.type", "db2");
+        String databaseClass = getParameter(servletContext, "database.class", "com.ibm.db2.jcc.DB2Driver");
+        String databaseUrl = getParameter(servletContext, "database.url", "jdbc:db2://192.168.15.3:50000/contact");
+        String databaseUser = getParameter(servletContext, "database.user", "db2user");
+        String databasePassword = getParameter(servletContext, "database.password", "db2password");
 
         try {
             Class.forName(databaseClass);
@@ -47,6 +48,8 @@ public class RepositoryListener implements ServletContextListener {
 
     private IRepository createRepository(String repositoryType, Connection connection) {
         return switch (repositoryType.toLowerCase()) {
+            case "db2" ->
+                new DB2Repository(connection);
             case "mysql" ->
                 new MySQLRepository(connection);
             case "sqlite" ->
