@@ -1,0 +1,80 @@
+# -------------------------
+# Maven / Gradle build
+# -------------------------
+target/
+build/
+out/
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs & temp files
+logs/
+*.log
+*.tmp
+*.swp
+*.swo
+
+# -------------------------
+# IDE specific
+# -------------------------
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+*.prefs
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# -------------------------
+# Java & server stuff
+# -------------------------
+*.class
+*.war
+*.ear
+
+# Local server configs (Tomcat, etc.)
+*.deploy
+*.properties.local
+
+# -------------------------
+# OS / Misc
+# -------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Archives and backups
+*.bak
+*.old
+*.orig
+*.tar
+*.tar.gz
+*.zip
+*.gz
