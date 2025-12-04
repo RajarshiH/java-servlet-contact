@@ -78,4 +78,4 @@ Desktop.ini
 *.tar.gz
 *.zip
 *.gz
-web.xml
+src/main/webapp/WEB-INF/web.xml
